@@ -76,8 +76,13 @@ WSGI_APPLICATION = 'calculadoraVerdad.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd1mt31kf82dj3i',
+        'HOST': 'ec2-52-73-149-159.compute-1.amazonaws.com',
+        'USER':'mdkhtowjkrjpqa',
+        'PASSWORD': '07765af5b83275e02afb25489ad5512701298ff8c35f7bf55bc4241a52c27a0a',
+        'PORT': '5432',
+   
     }
 }
 
