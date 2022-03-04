@@ -17,7 +17,6 @@
 
 <body>
 
-    <h1>{{datas}}</h1>
 
     <div class="calculadora-slay">
         <form class="calculadora" name="calc" action="" method="get">
@@ -36,20 +35,27 @@
             <span class="num" onclick="document.calc.text.value += '('">(</span>
             <span class="num" onclick="document.calc.text.value += ')'">)</span>
             <button class="equal" type="submit">Generar</button>
-      
-        </form>
-        <button class ="gen" type="button"  data-toggle="modal" data-target=".bd-example-modal-lg">Visualizar tabla de verdad</button>
 
-    
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        ...
-                    </div>
+        </form>
+        <button class="gen" type="button" data-toggle="modal" data-target=".bd-example-modal-lg">Visualizar tabla de
+            verdad</button>
+
+
+        <div id="modal" class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog"
+            aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    {% for lst in lsts %}
+                      <ul class="listas">
+                        {% for item in lst %}
+                        <li>{{item}}</li>
+                        {% endfor %}
+                      </ul> 
+                    {% endfor %}
                 </div>
             </div>
-    
+        </div>
+
     </div>
 
 
