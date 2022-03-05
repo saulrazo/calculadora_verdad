@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'img/calver.png' %}">
     <title>Calculadora de tablas de verdad</title>
 </head>
 
@@ -20,6 +21,10 @@
 
     <div class="calculadora-slay">
         <form class="calculadora" name="calc" action="" method="get">
+            <!--LÓGICA DE LA CALCULADORA:
+                Se agregan al input los caracteres asignadosele mediante +=
+                la escritura de nuevos caracteres especificados por cada botón
+             -->
 
             <input value="{{ data }}" class="value" type="text" name="text" readonly="">
             <span class="num clear" onclick="document.calc.text.value = ''">AC</span>
@@ -32,8 +37,7 @@
             <span class="num" onclick="document.calc.text.value += '⊕'">⊕</span>
             <span class="num" onclick="document.calc.text.value += '→'">→</span>
             <span class="num" onclick="document.calc.text.value += '↔'">↔</span>
-            <span class="num" onclick="document.calc.text.value += '('">(</span>
-            <span class="num" onclick="document.calc.text.value += ')'">)</span>
+
             <button class="equal" type="submit">Generar</button>
 
         </form>
@@ -45,12 +49,20 @@
             aria-labelledby="myLargeModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content">
+                   
+                    <!-- Se obtiene las lista de listas final -->
                     {% for lst in lsts %}
-                      <ul class="listas">
+                    <div class="container">
+                      <ul>
+                        <!-- Se obtiene cada list incluida en la lista final -->
                         {% for item in lst %}
-                        <li>{{item}}</li>
+                        <div class="item">
+                         <!-- Se imprime cada ITEM como parte de una list de chars -->
+                          <li">{{item}}</li>
+                        </div> 
                         {% endfor %}
                       </ul> 
+                    </div>  
                     {% endfor %}
                 </div>
             </div>

@@ -80,8 +80,8 @@ body{
 }
 
 .calculadora .equal{
-    grid-column: span 2;
-    width: 240px;
+    grid-column: span 4;
+    width: 480px;
 }
 
 
@@ -97,8 +97,24 @@ body{
     
 }
 
-.main-table{
+.container{
+    padding: 2em;
     text-align: center;
+    
+}
+
+.item{
+    display: inline-block;
+    font-size: 50px;
+    padding-right: 10px;
+    
+
+}
+
+.messages{
+    padding: 30px;
+    text-align: center;
+ 
 }
 
 
